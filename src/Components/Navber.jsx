@@ -10,7 +10,7 @@ const Navber = () => {
         <NavLink to="/art&CraftList" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>My Art&Craft List</NavLink>
     </>
     return (
-        <div className="navbar mt-7 bg-base-100">
+        <div className="navbar pt-5 bg-[#F1EBEE]">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
