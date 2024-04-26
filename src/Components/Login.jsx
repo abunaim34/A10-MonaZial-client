@@ -1,8 +1,76 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form"
+import { FaGoogle, FaGithub, } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
+
+
 
 const Login = () => {
+    const [showPassword, setShowPassword] = useState(false)
+
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+    } = useForm()
     return (
-        <div>
-            Login
+        <div className="flex flex-col mt-12 lg:flex-row text-center items-center gap-10 justify-between lg:mx-16">
+            {/* <Helmet>
+                <title>Residential House | Login page</title>
+            </Helmet> */}
+            <div className="lg:text-start md:text-center mb-8 text-black">
+                <h1 className="mb-5 md:text-4xl text-3xl font-bold">Welcome to the <br /> <span className='bg-gradient-to-r from-[#9b5273] via-red-500 to-blue-400 text-transparent bg-clip-text bg-300% animate-gradient'>MonaZila</span> Login Page..!</h1>
+                <p className="mb-5 md:w-96 lg:w-full">Welcome to MonaZila, where the eyes are calm and every painting is an unforgettable experience. Join our exclusive community today by SignIn for your personal account. By becoming a member, you will gain access to special offers, personalized recommendations, and seamless booking experience.</p>
+            </div>
+
+            <div  className="card lg:mt-5 shrink-0 w-full md:w-[450px] max-w-full shadow-[60px] bg-[#E1D4DA]">
+                <div className="card-body">
+                    <form >
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text font-semibold">Email</span>
+                            </label>
+                            <input {...register("email")} type="email" placeholder="email" className="input input-bordered bg-[#675E62]" />
+                            {errors.email && <span className="text-red-600">This field is required</span>}
+                        </div>
+                        <div className="form-control relative">
+                            <label className="label">
+                                <span className="label-text font-semibold">Password</span>
+                            </label>
+                            <input {...register("password")} type={showPassword ? "text" : "password"} placeholder="password" className="input input-bordered bg-[#675E62]" />
+                            <span onClick={() => setShowPassword(!showPassword)} className="absolute top-12 right-2 cursor-pointer">
+                                {
+                                    showPassword ? <FaEyeSlash className="text-white" /> : <FaEye className="text-white" />
+                                }
+                            </span>
+                            {errors.password && <span className="text-red-600">This field is required</span>}
+                            <label className="label">
+                                <a href="#" className="label-text-alt link link-hover font-medium">Forgot password?</a>
+                            </label>
+                        </div>
+                        <div className="form-control mb-0 pb-0">
+                            <button className="btn font-bold border-none text-white bg-[#9b5273]">Login</button>
+                            <div className="divider mt-6"> OR</div>
+                        </div>
+                    </form>
+                    <div className=" mt-0 pt-0 flex flex-col md:flex-row justify-around items-center space-y-3 md:space-y-0">
+                        <button  className="btn btn-outline ">
+                            <FaGoogle />
+                            Login with Google
+                        </button>
+                        <button  className="btn btn-outline">
+                            <FaGithub />
+                            Login with Github
+                        </button>
+                    </div>
+                    <div className="text-center mt-4">
+                        <p>Dont have an account? <Link to='/register' className="text-blue-500 font-semibold">Sign UP</Link></p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

@@ -20,7 +20,7 @@ const Navber = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to="/" className="btn md:text-3xl flex items-center btn-ghost text-xl"><img className="w-10" src={logo} alt="Monazila" />Monazila</Link>
+                <Link to="/" className="btn md:text-3xl flex items-center btn-ghost text-xl"><img className="w-10" src={logo} alt="Monazila" />MonaZila</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal cursor-pointer px-1 gap-3">
