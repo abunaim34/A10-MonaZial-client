@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form"
 import { FaGoogle, FaGithub, } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
@@ -9,8 +9,9 @@ import toast from "react-hot-toast";
 
 
 const Login = () => {
-    const {logInUser} = useContext(AuthContext)
+    const {logInUser, googleLogin, githubLogin} = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
+    const navigate = useNavigate()
 
     const {
         register,
@@ -24,6 +25,7 @@ const Login = () => {
 
         reset()
 
+
         if (password.length < 6) {
             return toast.error('Password should be at least 6 characters or longer')
         }
@@ -35,6 +37,27 @@ const Login = () => {
         }
 
         logInUser(email, password)
+        .then(result => {
+            toast.success('Login successfully', result.user)
+                navigate("/")
+        })
+        .catch(error => {
+            console.error(error);
+        })
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => {
+            console.log(result.user);
+        })
+        .catch(error => {
+            console.error(error);
+        })
+    }
+
+    const handleGithubLogin = () => {
+        githubLogin()
         .then(result => {
             console.log(result.user);
         })
@@ -83,11 +106,11 @@ const Login = () => {
                         </div>
                     </form>
                     <div className=" mt-0 pt-0 flex flex-col md:flex-row justify-around items-center space-y-3 md:space-y-0">
-                        <button  className="btn btn-outline ">
+                        <button onClick={handleGoogleLogin} className="btn btn-outline ">
                             <FaGoogle />
                             Login with Google
                         </button>
-                        <button  className="btn btn-outline">
+                        <button onClick={handleGithubLogin} className="btn btn-outline">
                             <FaGithub />
                             Login with Github
                         </button>

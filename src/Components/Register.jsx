@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { AuthContext } from "../Provider/AuthProvider";
@@ -8,9 +8,9 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext)
+    const {createUser, upadateUserProfile, setReload} = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const {
         register,
@@ -20,7 +20,7 @@ const Register = () => {
     } = useForm()
 
     const onSubmit = (data) => {
-        const {email, password, } = data || {}
+        const {name, photoURL, email, password, } = data || {}
         console.log(data);
 
         reset()
@@ -37,12 +37,12 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                // updateUserProfile(name, photoURL)
-                //     .then(() => {
-                //         setReload(true)
-                //         toast.success('Register successfully', result.user)
-                //         navigate('/')
-                //     })
+                upadateUserProfile(name, photoURL)
+                    .then(() => {
+                        setReload(true)
+                        toast.success('Register successfully', result.user)
+                        navigate('/')
+                    })
                 console.log(result.user);
             })
             .catch(error => {
