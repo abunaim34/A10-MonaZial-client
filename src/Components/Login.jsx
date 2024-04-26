@@ -70,7 +70,7 @@ const Login = () => {
             })
     }
     return (
-        <div className="flex flex-col mt-12 lg:flex-row text-center items-center gap-10 justify-between lg:mx-16">
+        <div className="flex flex-col mt-20 lg:flex-row text-center items-center gap-10 justify-between lg:mx-16">
             {/* <Helmet>
                 <title>Residential House | Login page</title>
             </Helmet> */}
