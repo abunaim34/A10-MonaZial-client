@@ -1,8 +1,9 @@
+import Slider from "../Components/Slider";
 
 const Home = () => {
     return (
-        <div>
-            Home
+        <div className="lg:mx-10">
+            <Slider></Slider>
         </div>
     );
 };

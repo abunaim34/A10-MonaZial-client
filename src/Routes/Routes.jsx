@@ -7,6 +7,7 @@ import ArtCraftList from "../Pages/ArtCraftList";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
 import ErrorElement from "../Components/ErrorElement";
+import PrivateRutes from "./PrivateRutes";
 
 const router = createBrowserRouter([
     {
@@ -24,11 +25,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addCraftItem',
-                element: <AddCraftItem />
+                element: <PrivateRutes><AddCraftItem /></PrivateRutes>
             },
             {
                 path: '/art&CraftList',
-                element: <ArtCraftList />
+                element: <PrivateRutes><ArtCraftList /></PrivateRutes>
             },
             {
                 path: '/login',

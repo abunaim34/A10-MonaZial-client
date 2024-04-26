@@ -61,6 +61,8 @@ const Login = () => {
     const handleGithubLogin = () => {
         githubLogin()
             .then(result => {
+                toast.success('Login successfully', result.user)
+                navigate("/")
                 console.log(result.user);
             })
             .catch(error => {
