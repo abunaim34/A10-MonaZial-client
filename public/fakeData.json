@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "image": "https://example.com/painting1.jpg",
+      "item_name": "Watercolor Landscape Painting",
+      "subcategory_Name": "Watercolor Paintings",
+      "short_description": "Immerse yourself in the awe-inspiring beauty of nature with our 'Vibrant Sunset' oil painting. This masterpiece captures the essence of a serene evening, as the sun dips below the horizon, casting a warm glow over the tranquil ocean waters and igniting the sky with vibrant hues of orange, pink, and gold.",
+      "price": 45.99,
+      "rating": 4.8,
+      "customization": "Yes",
+      "processing_time": "3-5 days",
+      "stockStatus": "In-stock"
+    },
+    {
+      "id": 6,
+      "image": "https://example.com/drawing1.jpg",
+      "item_name": "Captivating Charcoal Portrait Drawing",
+      "subcategory_Name": "Charcoal Drawings",
+      "short_description": "Realistic portrait drawing made with charcoal medium.",
+      "price": 59.99,
+      "rating": 4.5,
+      "customization": "Yes",
+      "processing_time": "1-2 weeks",
+      "stockStatus": "None-stock"
+    },
+    {
+      "id": 2,
+      "image": "https://example.com/painting2.jpg",
+      "item_name": "Dynamic Abstract Acrylic Painting",
+      "subcategory_Name": "Acrylic Paintings",
+      "short_description": "Vibrant abstract painting created with acrylic colors.",
+      "price": 39.99,
+      "rating": 4.9,
+      "customization": "No",
+      "processing_time": "2-4 days",
+      "stockStatus": "In-stock"
+    },
+    {
+        "id": 3,
+      "image": "https://example.com/drawing2.jpg",
+      "item_name": "Pen and Ink Illustration",
+      "subcategory_Name": "Pen and Ink Drawings",
+      "short_description": "Intricate illustration done with pen and ink technique.",
+      "price": 29.99,
+      "rating": 4.7,
+      "customization": "Yes",
+      "processing_time": "1 week",
+      "stockStatus": "None-stock"
+    },
+    {
+        "id": 4,
+      "image": "https://example.com/painting3.jpg",
+      "item_name": "Oil Portrait Painting",
+      "subcategory_Name": "Oil Paintings",
+      "short_description": "Classic portrait painting done with oil colors.",
+      "price": 79.99,
+      "rating": 4.6,
+      "customization": "Yes",
+      "processing_time": "2-3 weeks",
+      "stockStatus": "In-stock"
+    },
+    {
+        "id": 5,
+      "image": "https://example.com/drawing3.jpg",
+      "item_name": "Pencil Sketch Portrait",
+      "subcategory_Name": "Pencil Sketches",
+      "short_description": "Detailed portrait sketch created with graphite pencils.",
+      "price": 49.99,
+      "rating": 4.8,
+      "customization": "Yes",
+      "processing_time": "1-2 days",
+      "stockStatus": "None-stock"
+    }
+  ]
+  

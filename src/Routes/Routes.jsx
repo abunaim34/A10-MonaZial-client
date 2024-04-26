@@ -8,6 +8,7 @@ import Login from "../Components/Login";
 import Register from "../Components/Register";
 import ErrorElement from "../Components/ErrorElement";
 import PrivateRutes from "./PrivateRutes";
+import CraftItemDetails from "../Components/CraftItemDetails";
 
 const router = createBrowserRouter([
     {
@@ -17,8 +18,15 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <Home />,
+                loader: () => fetch('/fakeData.json')
             },
+            {
+                path: '/craftItems/:id',
+                element: <PrivateRutes><CraftItemDetails /></PrivateRutes>,
+                loader: () => fetch('/fakeData.json')
+            },
+
             {
                 path: '/allArt&craftItems',
                 element: <AllArtCraftItems />
