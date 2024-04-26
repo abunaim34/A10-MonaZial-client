@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 
 
 const Login = () => {
-    const {logInUser, googleLogin, githubLogin} = useContext(AuthContext)
+    const { logInUser, googleLogin, githubLogin } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
 
@@ -21,7 +21,7 @@ const Login = () => {
     } = useForm()
 
     const handleLogin = (data) => {
-        const {email, password} = data || {}
+        const { email, password } = data || {}
 
         reset()
 
@@ -37,33 +37,35 @@ const Login = () => {
         }
 
         logInUser(email, password)
-        .then(result => {
-            toast.success('Login successfully', result.user)
+            .then(result => {
+                toast.success('Login successfully', result.user)
                 navigate("/")
-        })
-        .catch(error => {
-            console.error(error);
-        })
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
 
     const handleGoogleLogin = () => {
         googleLogin()
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.error(error);
-        })
+            .then(result => {
+                toast.success('Login successfully', result.user)
+                navigate("/")
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
 
     const handleGithubLogin = () => {
         githubLogin()
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.error(error);
-        })
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
     return (
         <div className="flex flex-col mt-12 lg:flex-row text-center items-center gap-10 justify-between lg:mx-16">
@@ -75,9 +77,9 @@ const Login = () => {
                 <p className=" md:w-[400px] lg:w-full">Welcome to MonaZila, where the eyes are calm and every painting is an unforgettable experience. Join our exclusive community today by SignIn for your personal account. By becoming a member, you will gain access to special offers, personalized recommendations, and seamless booking experience.</p>
             </div>
 
-            <div  className="card lg:mt-5 shrink-0 w-full md:w-[450px] max-w-full shadow-[60px] bg-[#E1D4DA]">
+            <div className="card lg:mt-5 shrink-0 w-full md:w-[450px] max-w-full shadow-[60px] bg-[#E1D4DA]">
                 <div className="card-body">
-                    <form onSubmit={ handleSubmit(handleLogin)}>
+                    <form onSubmit={handleSubmit(handleLogin)}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-semibold">Email</span>
