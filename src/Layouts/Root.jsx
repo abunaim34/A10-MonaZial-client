@@ -9,7 +9,7 @@ const Root = () => {
             <div className="w-full fixed top-0 z-10">
                 <Navber></Navber>
             </div>
-            <div className="lg:px-10 min-h-[calc(100vh-432px)] pt-20">
+            <div className="lg:px-10 min-h-[calc(100vh-350px)] pt-20">
                 <Outlet></Outlet>
             </div  >
             <Footer></Footer>

@@ -1,0 +1,69 @@
+[
+    {
+        "id": "1",
+        "title": "Handmade Ceramic Mug",
+        "img": "https://example.com/ceramic_mug.jpg",
+        "price": "$20",
+        "description": "A beautifully crafted ceramic mug, perfect for enjoying your favorite beverage.",
+        "stockStatus": "In-stock",
+        "view": 250,
+        "love": 120,
+        "rating": 4.5
+    },
+    {
+        "id": "2",
+        "title": "Handwoven Macrame Wall Hanging",
+        "img": "https://example.com/macrame_wall_hanging.jpg",
+        "price": "$50",
+        "description": "Add a bohemian touch to your space with this intricately woven macrame wall hanging.",
+        "stockStatus": "In-stock",
+        "view": 180,
+        "love": 90,
+        "rating": 4.5
+    },
+    {
+        "id": "3",
+        "title": "Quilted Patchwork Throw Blanket",
+        "img": "https://example.com/quilted_blanket.jpg",
+        "price": "$80",
+        "description": "Stay cozy and stylish with this handmade quilted patchwork throw blanket.",
+        "stockStatus": "In-stock",
+        "view": 210,
+        "love": 150,
+        "rating": 4.7
+    },
+    {
+        "id": "4",
+        "title": "Handcrafted Wooden Serving Tray",
+        "img": "https://example.com/wooden_tray.jpg",
+        "price": "$40",
+        "description": "Serve your guests in style with this elegant handcrafted wooden serving tray.",
+        "stockStatus": "In-stock",
+        "view": 160,
+        "love": 80,
+        "rating": 4.6
+
+    },
+    {
+        "id": "5",
+        "title": "Felted Wool Coasters Set",
+        "img": "https://example.com/wool_coasters.jpg",
+        "price": "$15",
+        "description": "Protect your surfaces and add a pop of color with this set of felted wool coasters.",
+        "stockStatus": "In-stock",
+        "view": 190,
+        "love": 100,
+        "rating": 4.9
+    },
+    {
+        "id": "6",
+        "title": "Hand-painted Ceramic Plant Pot",
+        "img": "https://example.com/ceramic_plant_pot.jpg",
+        "price": "$30",
+        "description": "Elevate your indoor garden with this hand-painted ceramic plant pot, each one unique.",
+        "stockStatus": "None-stock",
+        "view": 120,
+        "love": 70,
+        "rating": 4.4
+    }
+]

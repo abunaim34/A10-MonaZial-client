@@ -9,6 +9,7 @@ import Register from "../Components/Register";
 import ErrorElement from "../Components/ErrorElement";
 import PrivateRutes from "./PrivateRutes";
 import CraftItemDetails from "../Components/CraftItemDetails";
+import Painting from "../Components/Painting";
 
 const router = createBrowserRouter([
     {
@@ -19,14 +20,18 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('/fakeData.json')
+                loader: () => fetch('/fakeData.json'),
+            },
+            {
+                path: '/',
+                element: <Painting />,
+                loader: () => fetch('/Painting.json'),
             },
             {
                 path: '/craftItems/:id',
                 element: <PrivateRutes><CraftItemDetails /></PrivateRutes>,
                 loader: () => fetch('/fakeData.json')
             },
-
             {
                 path: '/allArt&craftItems',
                 element: <AllArtCraftItems />
