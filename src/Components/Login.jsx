@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form"
 import { FaGoogle, FaGithub, } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 
 const Login = () => {
+    const {logInUser} = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
-
 
     const {
         register,
@@ -16,19 +18,43 @@ const Login = () => {
         reset,
         formState: { errors },
     } = useForm()
+
+    const handleLogin = (data) => {
+        const {email, password} = data || {}
+
+        reset()
+
+        if (password.length < 6) {
+            return toast.error('Password should be at least 6 characters or longer')
+        }
+        if (!/[A-Z]/.test(password)) {
+            return toast.error('Your password should have at least one Uppercase characters')
+        }
+        else if (!/[a-z]/.test(password)) {
+            return toast.error('Your password should have at least one Lowercase characters')
+        }
+
+        logInUser(email, password)
+        .then(result => {
+            console.log(result.user);
+        })
+        .catch(error => {
+            console.error(error);
+        })
+    }
     return (
         <div className="flex flex-col mt-12 lg:flex-row text-center items-center gap-10 justify-between lg:mx-16">
             {/* <Helmet>
                 <title>Residential House | Login page</title>
             </Helmet> */}
-            <div className="lg:text-start md:text-center mb-8 text-black">
+            <div className="lg:text-start md:text-center text-black">
                 <h1 className="mb-5 md:text-4xl text-3xl font-bold">Welcome to the <br /> <span className='bg-gradient-to-r from-[#9b5273] via-red-500 to-blue-400 text-transparent bg-clip-text bg-300% animate-gradient'>MonaZila</span> Login Page..!</h1>
-                <p className="mb-5 md:w-96 lg:w-full">Welcome to MonaZila, where the eyes are calm and every painting is an unforgettable experience. Join our exclusive community today by SignIn for your personal account. By becoming a member, you will gain access to special offers, personalized recommendations, and seamless booking experience.</p>
+                <p className=" md:w-[400px] lg:w-full">Welcome to MonaZila, where the eyes are calm and every painting is an unforgettable experience. Join our exclusive community today by SignIn for your personal account. By becoming a member, you will gain access to special offers, personalized recommendations, and seamless booking experience.</p>
             </div>
 
             <div  className="card lg:mt-5 shrink-0 w-full md:w-[450px] max-w-full shadow-[60px] bg-[#E1D4DA]">
                 <div className="card-body">
-                    <form >
+                    <form onSubmit={ handleSubmit(handleLogin)}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-semibold">Email</span>

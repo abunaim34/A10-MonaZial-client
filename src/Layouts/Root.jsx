@@ -6,10 +6,10 @@ import Footer from "../Components/Footer";
 const Root = () => {
     return (
         <div className="font-serif bg-[#F1EBEE]">
-            <div className=" md:mx-4 ">
+            <div className="w-full fixed top-0 z-10">
                 <Navber></Navber>
             </div>
-            <div className="min-h-[calc(100vh-432px)]">
+            <div className="min-h-[calc(100vh-432px)] mt-20">
                 <Outlet></Outlet>
             </div  >
             <Footer></Footer>
