@@ -45,7 +45,7 @@ const Navber = () => {
         </>}
     </>
     return (
-        <div className="navbar pt-5 bg-[#F1EBEE] dark:bg-white">
+        <div className="navbar pt-5 bg-[#F1EBEE] text-black  ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -82,9 +82,9 @@ const Navber = () => {
                                 <img title={user?.displayName} alt="User Profile" src={user?.photoURL} />
                             </div>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100  rounded-box w-52">
                             <li><a>{user?.displayName}</a></li>
-                            <li onClick={handleLogout}><a>Logout</a></li>
+                            <Link onClick={handleLogout}><a>Logout</a></Link>
                         </ul>
                     </div> :
                     <><Link to="/register" className="btn font-bold hidden md:block pt-4 text-white bg-[#9b5273]">Register</Link>

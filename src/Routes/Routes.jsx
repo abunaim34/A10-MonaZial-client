@@ -20,7 +20,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('/fakeData.json'),
+                loader: () => fetch('http://localhost:5000/painting'),
             },
             {
                 path: '/',
