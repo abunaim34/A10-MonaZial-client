@@ -1,14 +1,11 @@
-import { useLoaderData, useParams } from "react-router-dom";
-import img from '../assets/high-angle-view-human-hand-painting-white-paper-with-colorful-brushstroke_23-2148118022.jpg'
+import { useLoaderData } from "react-router-dom";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const CraftItemDetails = () => {
     const {user} = useContext(AuthContext)
-    const craftsDetails = useLoaderData()
-    const {id} = useParams()
-    const craftDetails = craftsDetails.find(details => details.id == id)
+    const craftDetails = useLoaderData()
 
     return (
         <div className="pt-10">
@@ -18,7 +15,7 @@ const CraftItemDetails = () => {
                </Helmet> */}
                
                <div className=" w-full text-center pt-5">
-                   <figure><img className="w-[300px] md:w-[650px] lg:w-[850px] md:h-[500px] h-full rounded-3xl" src={img} alt="Album" /></figure>
+                   <figure><img className="w-[300px] md:w-[650px] lg:w-[850px] md:h-[500px] h-full rounded-3xl" src={craftDetails.image} alt="Album" /></figure>
                </div>
                <div className="card-body">
                    <h2 className="card-title mb-5 font-bold text-2xl md:text-3xl">{craftDetails.item_name}</h2>
@@ -59,7 +56,6 @@ const CraftItemDetails = () => {
                            <p className="font-bold text-black pr-2">Price : {craftDetails.price}</p>
                        </div>
                    </div>
-                   
                </div>
            </div>
         </div>

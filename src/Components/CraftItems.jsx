@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 const CraftItems = ({ item }) => {
-    const { id, image, item_name, subcategory_Name, short_description, price, rating, stockStatus } = item || {}
+    const {_id, image, item_name, subcategory_Name, short_description, price, rating, stockStatus } = item || {}
     return (
         <div className="card relative bg-base-100  rounded-xl shadow-xl">
             <figure className="px-4 pt-5">
@@ -28,7 +28,7 @@ const CraftItems = ({ item }) => {
                 <h1 className="font-medium text-start">{subcategory_Name}</h1>
                 <p className="text-[#12132D99] font-sans">{short_description}</p>
             </div>
-            <Link to={`/craftItems/${id}`} className="p-4"><button className="btn bg-[#9b5273] text-white w-full">View Details page</button></Link>
+            <Link to={`/craftItems/${_id}`} className="p-4"><button className="btn bg-[#9b5273] text-white w-full">View Details page</button></Link>
         </div>
     );
 };
