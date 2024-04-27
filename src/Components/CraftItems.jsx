@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const CraftItems = ({ item }) => {
     const { id, item_name, subcategory_Name, short_description, price, rating, stockStatus } = item || {}
     return (
-        <div className=" relative bg-base-100  rounded-xl shadow-xl">
+        <div className="card relative bg-base-100  rounded-xl shadow-xl">
             <figure className="px-4 pt-5">
                 <img src={img} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -28,10 +28,8 @@ const CraftItems = ({ item }) => {
                 <h1 className=" text-xl text-start">{item_name}</h1>
                 <h1 className="font-medium text-start">{subcategory_Name}</h1>
                 <p className="text-[#12132D99] font-sans">{short_description.slice(0, 60)}</p>
-                <div className="flex items-center bottom-0 gap-4 py-3 text-center">
-                    <button className="btn bg-[#9b5273] w-full"><Link to={`/craftItems/${id}`}>View Details page</Link></button>
-                </div>
             </div>
+            <Link to={`/craftItems/${id}`} className="p-4"><button className="btn bg-[#9b5273] text-white w-full">View Details page</button></Link>
         </div>
     );
 };

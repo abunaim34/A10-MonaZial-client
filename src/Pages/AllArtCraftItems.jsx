@@ -8,9 +8,9 @@ const AllArtCraftItems = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <td>Name</td>
-                            <td>Time</td>
-                            <td>Calories</td>
+                            <th>Name</th>
+                            <th>Time</th>
+                            <th>Price</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -20,7 +20,7 @@ const AllArtCraftItems = () => {
                             <td>name</td>
                             <td> minutes</td>
                             <td> calories</td>
-                            <td><button className='btn rounded-full'>View Details Page</button></td>
+                            <td><button className='btn rounded-full bg-[#9b5273] text-white'>View Details</button></td>
                         </tr>
                     </tbody>
                 </table>
