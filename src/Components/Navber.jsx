@@ -41,7 +41,7 @@ const Navber = () => {
         <NavLink to="/allArt&craftItems" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>All Art & craft Items</NavLink>
         {user && <>
             <NavLink to="/addCraftItem" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>Add Craft Item</NavLink>
-            <NavLink to="/art&CraftList" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>My Art&Craft List</NavLink>
+            <NavLink to="/artCraftList" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>My Art&Craft List</NavLink>
         </>}
     </>
     return (
@@ -84,7 +84,7 @@ const Navber = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100  rounded-box w-52">
                             <li><a>{user?.displayName}</a></li>
-                            <Link onClick={handleLogout}><a>Logout</a></Link>
+                            <li onClick={handleLogout}><Link to="/login">Logout</Link></li>
                         </ul>
                     </div> :
                     <><Link to="/register" className="btn font-bold hidden md:block pt-4 text-white bg-[#9b5273]">Register</Link>

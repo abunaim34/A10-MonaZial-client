@@ -3,13 +3,13 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 
 
-const AddCraftItem = () => {
+const UpdateArtCraftList = () => {
     const {user} = useContext(AuthContext)
 
-    const handleAddItems = e => {
+    const handleUpdateItem = e => {
         e.preventDefault()
         const form = e.target
-        const item_name = form.item_name.value
+        const item_name = form.name.value
         const subcategory_Name = form.SubCategory.value
         const price = form.price.value 
         const image = form.image.value
@@ -25,8 +25,8 @@ const AddCraftItem = () => {
         console.log(painting);
 
 
-        fetch('http://localhost:5000/paintings', {
-            method: "POST",
+        fetch('http://localhost:5000/painting', {
+            method: "PUT",
             headers: {
                 'content-type': "application/json"
             },
@@ -53,14 +53,14 @@ const AddCraftItem = () => {
                 <h2 className="text-3xl pb-3 font-bold">Add Craft Item</h2>
                 <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
             </div>
-            <form onSubmit={handleAddItems} className="p-4">
+            <form onSubmit={handleUpdateItem} className="p-4">
                 <div className="md:flex md:gap-2 lg:gap-0 md:mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
                             <span className="label-text font-bold">Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="item_name" placeholder="Name" className="input input-bordered w-full" />
+                            <input type="text" name="name" placeholder="Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 lg:ml-4">
@@ -162,4 +162,4 @@ const AddCraftItem = () => {
     );
 };
 
-export default AddCraftItem;
+export default UpdateArtCraftList;

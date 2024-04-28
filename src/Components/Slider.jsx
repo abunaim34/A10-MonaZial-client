@@ -23,7 +23,7 @@ const Slider = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <div className="hero mt-12 h-[420px] rounded-3xl" style={{ backgroundImage: 'url(https://i.ibb.co/MD8zzC4/slider-3.jpg)' }}>
+                    <div className="hero mt-12 h-[450px] rounded-3xl" style={{ backgroundImage: 'url(https://i.ibb.co/MD8zzC4/slider-3.jpg)' }}>
                         <div className="hero-overlay bg-opacity-60 rounded-3xl"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-xl ">
@@ -33,7 +33,7 @@ const Slider = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide><div className="hero mt-12 h-[420px] rounded-3xl" style={{ backgroundImage: 'url(https://i.ibb.co/VHX1bhY/slider-2.jpg)' }}>
+                <SwiperSlide><div className="hero mt-12 h-[450px] rounded-3xl" style={{ backgroundImage: 'url(https://i.ibb.co/VHX1bhY/slider-2.jpg)' }}>
                     <div className="hero-overlay bg-opacity-60 rounded-3xl"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-xl ">
@@ -44,7 +44,7 @@ const Slider = () => {
                 </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="hero mt-12 h-[420px] rounded-3xl" style={{ backgroundImage: 'url(https://i.ibb.co/hsKpDKm/slider-1.jpg)' }}>
+                    <div className="hero mt-12 h-[450px] rounded-3xl" style={{ backgroundImage: 'url(https://i.ibb.co/hsKpDKm/slider-1.jpg)' }}>
                         <div className="hero-overlay bg-opacity-60 rounded-3xl"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-xl ">
