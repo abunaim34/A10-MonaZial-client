@@ -28,7 +28,7 @@ const CraftItems = ({ item }) => {
                 <h1 className="font-medium text-start">{subcategory_Name}</h1>
                 <p className="text-[#12132D99] font-sans">{short_description}</p>
             </div>
-            <Link to={`/Craft/${_id}`} className="p-4"><button className="btn bg-[#9b5273] text-white w-full">View Details page</button></Link>
+            <Link to={`/craftItems/${_id}`} className="p-4"><button className="btn bg-[#9b5273] text-white w-full">View Details page</button></Link>
         </div>
     );
 };

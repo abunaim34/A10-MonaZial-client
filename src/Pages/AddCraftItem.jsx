@@ -10,14 +10,14 @@ const AddCraftItem = () => {
         e.preventDefault()
         const form = e.target
         const item_name = form.item_name.value
-        const subcategory_Name = form.SubCategory.value
+        const subcategory_Name = form.subcategory_Name.value
         const price = form.price.value 
         const image = form.image.value
         const customization = form.customization.value
         const processing_time = form.processing_time.value 
         const stockStatus = form.stockStatus.value
         const rating = form.rating.value
-        const short_description = form.description.value
+        const short_description = form.short_description.value
         const userName = user?.displayName
         const email = user?.email
 
@@ -86,7 +86,7 @@ const AddCraftItem = () => {
                             <span className="label-text font-bold">Email</span>
                         </label>
                         <label className="input-group">
-                            <input type="email" value={user?.email} name="email" placeholder="Price" disabled className="input input-bordered w-full" />
+                            <input type="email" value={user?.email} name="email" placeholder="Email" disabled className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -96,7 +96,7 @@ const AddCraftItem = () => {
                             <span className="label-text font-bold">Sub-Category</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="SubCategory" placeholder="Sub-category" className="input input-bordered w-full" />
+                            <input type="text" name="subcategory_Name" placeholder="Sub-category" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 lg:ml-4">
@@ -151,7 +151,7 @@ const AddCraftItem = () => {
                         </label>
                         <label className="input-group">
                             {/* <input type="text" name="description" placeholder="Description" className="input input-bordered w-full" /> */}
-                            <textarea name="description" rows="5" className="border-2 w-full"></textarea>
+                            <textarea name="short_description" rows="5" className="border-2 w-full"></textarea>
                         </label>
                     </div>
                 </div>

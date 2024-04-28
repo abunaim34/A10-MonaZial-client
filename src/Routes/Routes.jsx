@@ -9,6 +9,7 @@ import Register from "../Components/Register";
 import ErrorElement from "../Components/ErrorElement";
 import PrivateRutes from "./PrivateRutes";
 import CraftItemDetails from "../Components/CraftItemDetails";
+import UpdateArtCraftList from "../Components/UpdateArtCraftList";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
                 loader: () => fetch('http://localhost:5000/paintings'),
             },
             {
-                path: '/Craft/:id',
+                path: '/craftItems/:id',
                 element: <PrivateRutes><CraftItemDetails /></PrivateRutes>,
                 loader: ({params}) => fetch(`http://localhost:5000/painting/${params.id}`)
             },
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
             {
                 path: '/artCraftList',
                 element: <PrivateRutes><ArtCraftList /></PrivateRutes>,
+            },
+            {
+                path: '/artCraftList/:id',
+                element: <UpdateArtCraftList />,
+                loader: ({params}) => fetch(`http://localhost:5000/painting/${params.id}`)
             },
             {
                 path: '/login',
