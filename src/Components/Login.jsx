@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Tooltip } from "react-tooltip";
+import { Bounce, Roll } from "react-awesome-reveal";
 
 
 
@@ -105,25 +107,26 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mb-0 pb-0">
-                            <button className="btn font-bold border-none text-white bg-[#9b5273]">Login</button>
+                            <Bounce duration={2000}><button data-tooltip-id="my-tooltip" data-tooltip-content="Login Now" className="btn font-bold border-none w-full text-white bg-[#9b5273]">Login</button></Bounce>
                             <div className="divider mt-6"> OR</div>
                         </div>
                     </form>
                     <div className=" mt-0 pt-0 flex flex-col md:flex-row justify-around items-center space-y-3 md:space-y-0">
-                        <button onClick={handleGoogleLogin} className="btn btn-outline ">
+                        <Roll><button data-tooltip-id="my-tooltip" data-tooltip-content="If you want to Login with Google. Please click me." onClick={handleGoogleLogin} className="btn btn-outline ">
                             <FaGoogle />
                             Login with Google
-                        </button>
-                        <button onClick={handleGithubLogin} className="btn btn-outline">
+                        </button></Roll>
+                        <Roll><button data-tooltip-id="my-tooltip" data-tooltip-content="If you want to Login with Github. Please click me." onClick={handleGithubLogin} className="btn btn-outline">
                             <FaGithub />
                             Login with Github
-                        </button>
+                        </button></Roll>
                     </div>
                     <div className="text-center mt-4">
                         <p>Dont have an account? <Link to='/register' className="text-blue-500 font-semibold">Sign UP</Link></p>
                     </div>
                 </div>
             </div>
+            <Tooltip id="my-tooltip" />
         </div>
     );
 };

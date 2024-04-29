@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom"
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { AuthContext } from "../Provider/AuthProvider";
+import { Tooltip } from "react-tooltip";
+import { Bounce } from "react-awesome-reveal";
 
 
 
@@ -98,13 +100,14 @@ const Register = () => {
                         {errors.password && <span className="text-red-600">This field is required</span>}
                     </div>
                     <div className="form-control mt-3">
-                        <button className="btn font-bold text-white bg-[#9b5273]">Register</button>
+                        <Bounce duration={2000}><button data-tooltip-id="my-tooltip" data-tooltip-content="Register Now" className="btn font-bold w-full text-white bg-[#9b5273]">Register</button></Bounce>
                         <div className="text-center mt-4">
                             <p>Have an account? <Link to='/login' className="text-blue-500 font-semibold">Log In</Link></p>
                         </div>
                     </div>
                 </form>
             </div>
+            <Tooltip id="my-tooltip" />
         </div>
     );
 };

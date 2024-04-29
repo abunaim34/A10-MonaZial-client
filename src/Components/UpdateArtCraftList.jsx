@@ -1,3 +1,4 @@
+import { Bounce } from "react-awesome-reveal";
 import {useLoaderData} from "react-router-dom"
 import Swal from 'sweetalert2'
 
@@ -227,7 +228,7 @@ const UpdateArtCraftList = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add" className="btn btn-block text-white bg-[#9b5273]" />
+                <Bounce duration={2000}><input data-tooltip-id="my-tooltip" data-tooltip-content="Please click me, or Update your Items" type="submit" value="UPDATE" className="btn btn-block text-white bg-[#9b5273]" /></Bounce>
 
             </form>
         </div>

@@ -9,22 +9,18 @@ const CraftItemDetails = () => {
 
     return (
         <div className="pt-10">
-            <div  className="card lg:w-[1000px] md:w-[700px] mx-auto bg-base-100 border border-t-0 shadow-xl lg:space-x-14">
-               {/* <Helmet>
-                   <title>Residential House | SubCategory Details</title>
-               </Helmet> */}
-               
+            <div  className="card lg:w-[1000px] md:w-[700px] mx-auto bg-base-100 border border-t-0 shadow-xl lg:space-x-14">             
                <div className=" w-full text-center pt-5">
                    <figure><img className="w-[300px] md:w-[650px] lg:w-[850px] md:h-[500px] h-full rounded-3xl" src={craftDetails.image} alt="Album" /></figure>
                </div>
                <div className="card-body">
-                   <h2 className="card-title mb-5 font-bold text-2xl md:text-3xl">{craftDetails.item_name}</h2>
+                   <h2 className="card-title mb-5 font-bold text-xl md:text-3xl">{craftDetails.item_name}</h2>
                    <div className="flex items-center justify-between mb-5 ">
                        <div>
-                           <span className="font-bold text-black pr-2 ">SubCategory :</span> <span className="font-semibold">{craftDetails.subcategory_Name}</span>
+                           <span className="md:font-bold font-medium text-black pr-2 ">SubCategory :</span> <span className="font-semibold">{craftDetails.subcategory_Name}</span>
                        </div>
-                       <div className='flex gap-2'>
-                           <span className="font-bold text-black  ">stockStatus:</span> <span className="font-semibold">{craftDetails.stockStatus}</span>
+                       <div className="flex">
+                           <span className="font-bold  text-black pr-2"><span className="hidden md:block">Rating :</span> </span><span className="font-semibold flex items-center font-sans">{craftDetails.rating}<FaStarHalfAlt /></span>
                        </div>
                    </div>
                    <div className="flex justify-between flex-col md:flex-row">
@@ -49,11 +45,11 @@ const CraftItemDetails = () => {
                    </div>
                    
                    <div className="flex justify-between mt-6">
-                       <div className="flex">
-                           <span className="font-bold  text-black pr-2">Rating : </span><span className="font-semibold flex items-center font-sans">{craftDetails.rating}<FaStarHalfAlt /></span>
+                       <div className='flex gap-2'>
+                           <span className="md:font-bold font-medium text-black  ">stockStatus:</span> <span className="font-semibold">{craftDetails.stockStatus}</span>
                        </div>
                        <div>
-                           <p className="font-bold text-black pr-2">Price : {craftDetails.price}</p>
+                           <p className="md:font-bold font-medium text-black pr-2">Price : {craftDetails.price}</p>
                        </div>
                    </div>
                </div>

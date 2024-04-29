@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo2.png"
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Tooltip } from "react-tooltip";
 
 const Navber = () => {
     const { user, logOut, loading } = useContext(AuthContext)
@@ -37,11 +38,11 @@ const Navber = () => {
     }, [theme])
 
     const navLinks = <>
-        <NavLink to="/" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>Home</NavLink>
-        <NavLink to="/allArt&craftItems" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>All Art & craft Items</NavLink>
+        <NavLink data-tooltip-id="my-tooltip" data-tooltip-content="This is Home Page" to="/" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>Home</NavLink>
+        <NavLink data-tooltip-id="my-tooltip" data-tooltip-content="This is All Art&Craft items page" to="/allArt&craftItems" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>All Art & craft Items</NavLink>
         {user && <>
-            <NavLink to="/addCraftItem" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>Add Craft Item</NavLink>
-            <NavLink to="/artCraftList" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>My Art&Craft List</NavLink>
+            <NavLink to="/addCraftItem" data-tooltip-id="my-tooltip" data-tooltip-content="This is Add Craft Item Page" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>Add Craft Item</NavLink>
+            <NavLink to="/artCraftList" data-tooltip-id="my-tooltip" data-tooltip-content="This is My Art&Craft List Page" className={({ isActive }) => isActive ? 'border p-2 border-[#9b5273] text-[#9b5273] font-black' : 'font-black p-2'}>My Art&Craft List</NavLink>
         </>}
     </>
     return (
@@ -55,7 +56,7 @@ const Navber = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to="/" className="btn md:text-3xl flex items-center btn-ghost text-xl"><img className="md:w-10 w-6" src={logo} alt="Monazila" />MonaZila</Link>
+                <Link data-tooltip-id="my-tooltip" data-tooltip-content="MonaZila is our website Name" to="/" className="btn md:text-3xl flex items-center btn-ghost text-xl"><img className="md:w-10 w-6" src={logo} alt="Monazila" />MonaZila</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal cursor-pointer px-1 gap-3">
@@ -63,7 +64,7 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <label className="swap swap-rotate pr-2">
+                <label data-tooltip-id="my-tooltip" data-tooltip-content="If you want to Theme change. Please Click" className="swap swap-rotate pr-2">
                     {/* this hidden checkbox controls the state */}
                     <input onChange={handleTheme} type="checkbox" className="theme-controller" value="synthwave" />
 
@@ -82,14 +83,16 @@ const Navber = () => {
                                 <img title={user?.displayName} alt="User Profile" src={user?.photoURL} />
                             </div>
                         </div>
+                        
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100  rounded-box w-52">
                             <li><a>{user?.displayName}</a></li>
                             <li onClick={handleLogout}><Link to="/login">Logout</Link></li>
                         </ul>
                     </div> :
-                    <><Link to="/register" className="btn font-bold hidden md:block pt-4 text-white bg-[#9b5273]">Register</Link>
-                        <Link to="/login" className="btn font-bold text-white bg-[#9b5273]">Login</Link></>}
+                    <><Link to="/register" data-tooltip-id="my-tooltip" data-tooltip-content="Register Now" className="btn font-bold hidden md:block pt-4 text-white bg-[#9b5273]">Register</Link>
+                        <Link to="/login" data-tooltip-id="my-tooltip" data-tooltip-content="Login Now" className="btn font-bold text-white bg-[#9b5273]">Login</Link></>}
             </div>
+            <Tooltip id="my-tooltip" />
         </div>
     );
 };

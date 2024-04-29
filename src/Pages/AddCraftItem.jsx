@@ -1,27 +1,29 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
+import { Tooltip } from "react-tooltip";
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 
 const AddCraftItem = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const handleAddItems = e => {
         e.preventDefault()
         const form = e.target
         const item_name = form.item_name.value
         const subcategory_Name = form.subcategory_Name.value
-        const price = form.price.value 
+        const price = form.price.value
         const image = form.image.value
         const customization = form.customization.value
-        const processing_time = form.processing_time.value 
+        const processing_time = form.processing_time.value
         const stockStatus = form.stockStatus.value
         const rating = form.rating.value
         const short_description = form.short_description.value
         const userName = user?.displayName
         const email = user?.email
 
-        const painting = {item_name, subcategory_Name, price, image, customization,processing_time, stockStatus, rating, short_description, userName, email}
+        const painting = { item_name, subcategory_Name, price, image, customization, processing_time, stockStatus, rating, short_description, userName, email }
         console.log(painting);
 
 
@@ -32,26 +34,26 @@ const AddCraftItem = () => {
             },
             body: JSON.stringify(painting)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success',
-                    text: 'Craft Item added successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Continue'
-                })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Craft Item added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Continue'
+                    })
 
-                form.reset()
-            }
-        })
+                    form.reset()
+                }
+            })
     }
     return (
         <div className=" lg:px-24 py-12">
             <div className="text-center mb-8 md:px-4">
-                <h2 className="text-3xl pb-3 font-bold">Add Craft Item</h2>
-                <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                <Slide><h2 className="text-3xl pb-3 font-bold">Add Craft Item</h2></Slide>
+                <Fade delay={1000} cascade><p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p></Fade>
             </div>
             <form onSubmit={handleAddItems} className="p-4">
                 <div className="md:flex md:gap-2 lg:gap-0 md:mb-8">
@@ -155,9 +157,11 @@ const AddCraftItem = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add" className="btn btn-block text-white bg-[#9b5273]" />
-
+                <Zoom>
+                    <input data-tooltip-id="my-tooltip" data-tooltip-content="Please click if you want Add Craft Items on Database" type="submit" value="Add" className="btn btn-block text-white bg-[#9b5273]" />
+                </Zoom>
             </form>
+            <Tooltip id="my-tooltip" />
         </div>
     );
 };

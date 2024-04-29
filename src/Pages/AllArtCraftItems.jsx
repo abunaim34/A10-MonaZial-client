@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
 
 
 const AllArtCraftItems = () => {
@@ -27,12 +28,13 @@ const AllArtCraftItems = () => {
                             <td>{item.subcategory_Name}</td>
                             <td className="font-sans">{item.price}</td>
                             <td>{item.stockStatus}</td>
-                            <td><Link to={`/craftItems/${item._id}`}><button className="btn rounded-3xl text-white bg-[#9b5273]">View Details</button></Link></td>
+                            <td data-tooltip-id="my-tooltip" data-tooltip-content="Please click if you want to see our View Details"><Link to={`/craftItems/${item._id}`}><button className="btn rounded-3xl text-white bg-[#9b5273]">View Details</button></Link></td>
                         </tr>)
                         }
                     </tbody>
                 </table>
             </div>
+            <Tooltip id="my-tooltip" />
         </div>
     );
 };

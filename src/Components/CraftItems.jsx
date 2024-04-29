@@ -2,6 +2,7 @@ import { BiDollarCircle } from "react-icons/bi";
 import { FaStarHalfAlt } from "react-icons/fa";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
+import { Tooltip } from "react-tooltip";
 
 
 const CraftItems = ({ item }) => {
@@ -11,7 +12,7 @@ const CraftItems = ({ item }) => {
             <figure className="px-4 pt-5">
                 <img src={image} alt="Shoes" className="rounded-xl h-[235px]" />
             </figure>
-            <div className="bg-[#9b5273] right-4 top-5 rounded-sm absolute">
+            <div data-tooltip-id="my-tooltip" data-tooltip-content={`StockStatus : ${stockStatus}`} className="bg-[#9b5273] right-4 top-5 rounded-sm absolute">
                 <p className="text-white p-1">{stockStatus}</p>
             </div>
             <div className="px-4 space-y-2 text-start">
@@ -26,9 +27,10 @@ const CraftItems = ({ item }) => {
                 </div>
                 <h1 className=" text-xl text-start">{item_name}</h1>
                 <h1 className="font-medium text-start">{subcategory_Name}</h1>
-                <p className="text-[#12132D99] font-sans">{short_description}</p>
+                <p className=" font-sans">{short_description}</p>
             </div>
-            <Link to={`/craftItems/${_id}`} className="p-4"><button className="btn bg-[#9b5273] text-white w-full">View Details page</button></Link>
+            <Link data-tooltip-id="my-tooltip" data-tooltip-content="Please click if you want to see our View Details" to={`/craftItems/${_id}`} className="p-4"><button className="btn bg-[#9b5273] text-white w-full">View Details page</button></Link>
+            <Tooltip id="my-tooltip" />
         </div>
     );
 };
