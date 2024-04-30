@@ -8,11 +8,13 @@ import Painting from "../Components/Painting";
 import { useEffect } from "react";
 import { useState } from "react";
 import {GridLoader} from "react-spinners"
+import HomeCtgryCard from "../Components/HomeCtgryCard";
 
 
 
 const Home = () => {
     const [items, setItems] = useState([])
+    const [category, setCategory] = useState([])
     const [loader, setLoader] = useState(false)
 
     useEffect(() => {
@@ -22,6 +24,16 @@ const Home = () => {
             .then(data => {
                 setLoader(false)
                 setItems(data)
+            })
+    }, [])
+
+    useEffect(() => {
+        setLoader(true)
+        fetch('https://monazila-server.vercel.app/subCategory')
+            .then(res => res.json())
+            .then(data => {
+                setLoader(false)
+                setCategory(data)
             })
     }, [])
     return (
@@ -37,7 +49,7 @@ const Home = () => {
                 </div>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 mt-8 grid-cols-1 gap-4 ">
                     {
-                      loader ? <GridLoader color="#36d7b7" />:  items.slice(0, 6).map((item, i) => <CraftItems key={i} item={item} />)
+                      loader ? <GridLoader color="#36d7b7" /> :  items.slice(0, 6).map((item, i) => <CraftItems key={i} item={item} />)
                     }
                 </div>
             </div>
@@ -48,9 +60,9 @@ const Home = () => {
                     </Zoom>
                 </div>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 mt-8 grid-cols-1 gap-4">
-                    {/* {
-                        loading ? 'loading' : items.slice(0, 6).map((item, i) => <CraftItems key={i} item={item} />)
-                    } */}
+                    {
+                     loader ? <GridLoader color="#36d7b7" /> : category.map((item, i) => <HomeCtgryCard key={i} item={item} />)
+                    }
                 </div>
             </div>
             <div className="mt-14 text-center">

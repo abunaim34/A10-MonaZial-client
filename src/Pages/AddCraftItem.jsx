@@ -53,7 +53,7 @@ const AddCraftItem = () => {
         <div className=" lg:px-24 py-12">
             <div className="text-center mb-8 md:px-4">
                 <Slide><h2 className="text-3xl pb-3 font-bold">Add Craft Item</h2></Slide>
-                <Fade delay={1000} cascade><p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p></Fade>
+                <Fade delay={1000} cascade><p>This is the Add Art & Craft Items page here if you want you can add my categories based on the categories fixed by us as per your choice So lets go and add your Craft Items.</p></Fade>
             </div>
             <form onSubmit={handleAddItems} className="p-4">
                 <div className="md:flex md:gap-2 lg:gap-0 md:mb-8">

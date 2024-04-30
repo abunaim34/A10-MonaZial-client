@@ -18,7 +18,7 @@ const Painting = () => {
     return (
         <>
             {
-                items.map(item => <div key={item.id}
+                items.slice(0,4).map(item => <div key={item.id}
                     // const {title, img, price, description, stockStatus, view, love, rating} item
                  className="flex items-start  border rounded-2xl">
                     <div className="flex flex-col md:flex-row">

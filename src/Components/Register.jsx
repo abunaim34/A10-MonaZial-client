@@ -68,27 +68,27 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Name</span>
                         </label>
-                        <input {...register("name", { required: true })} type="text" placeholder="Full Name" className="input input-bordered bg-[#675E62]" />
+                        <input {...register("name", { required: true })} type="text" placeholder="Full Name" className="input input-bordered bg-[#675E62] text-white" />
                         {errors.name && <span className="text-red-600">This field is required</span>}
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text font-semibold">Email</span>
                         </label>
-                        <input {...register("email", { required: true })} type="email" placeholder="email" className="input input-bordered bg-[#675E62]" />
+                        <input {...register("email", { required: true })} type="email" placeholder="email" className="input input-bordered bg-[#675E62] text-white" />
                         {errors.email && <span className="text-red-600">This field is required</span>}
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text font-semibold">Photo URL</span>
                         </label>
-                        <input {...register("photoURL",)} type="text" placeholder="Photo URL" className="input input-bordered bg-[#675E62]" />
+                        <input {...register("photoURL",)} type="text" placeholder="Photo URL" className="input input-bordered bg-[#675E62] text-white" />
                     </div>
                     <div className="form-control relative">
                         <label className="label">
                             <span className="label-text font-semibold">Password</span>
                         </label>
-                        <input {...register("password", { required: true })} type={showPassword ? "text" : "password"} placeholder="password" className="input input-bordered bg-[#675E62]" />
+                        <input {...register("password", { required: true })} type={showPassword ? "text" : "password"} placeholder="password" className="input input-bordered text-white bg-[#675E62]" />
                         <span onClick={() => setShowPassword(!showPassword)} className="absolute top-12 right-2 cursor-pointer">
                             {
                                 showPassword ? <FaEyeSlash className="text-white" /> : <FaEye className="text-white" />

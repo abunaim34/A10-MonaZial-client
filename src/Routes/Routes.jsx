@@ -10,6 +10,7 @@ import ErrorElement from "../Components/ErrorElement";
 import PrivateRutes from "./PrivateRutes";
 import CraftItemDetails from "../Components/CraftItemDetails";
 import UpdateArtCraftList from "../Components/UpdateArtCraftList";
+import SubCategories from "../Components/SubCategories";
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
+            },
+            {
+                path: '/allSubCategories/:subcategory',
+                element: <PrivateRutes><SubCategories /></PrivateRutes>,
             },
             {
                 path: '/craftItems/:id',

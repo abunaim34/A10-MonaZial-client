@@ -10,7 +10,7 @@ const CraftItems = ({ item }) => {
     return (
         <div className="card relative bg-base-100  rounded-xl shadow-xl">
             <figure className="px-4 pt-5">
-                <img src={image} alt="Shoes" className="rounded-xl h-[235px]" />
+                <img src={image} alt="Shoes" className="rounded-xl h-[235px] w-[300px]" />
             </figure>
             <div data-tooltip-id="my-tooltip" data-tooltip-content={`StockStatus : ${stockStatus}`} className="bg-[#9b5273] right-4 top-5 rounded-sm absolute">
                 <p className="text-white p-1">{stockStatus}</p>

@@ -85,14 +85,14 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text font-semibold">Email</span>
                             </label>
-                            <input {...register("email")} type="email" placeholder="email" className="input input-bordered bg-[#675E62]" />
+                            <input {...register("email")} type="email" placeholder="email" className="input input-bordered bg-[#675E62] text-white" />
                             {errors.email && <span className="text-red-600">This field is required</span>}
                         </div>
                         <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text font-semibold">Password</span>
                             </label>
-                            <input {...register("password")} type={showPassword ? "text" : "password"} placeholder="password" className="input input-bordered bg-[#675E62]" />
+                            <input {...register("password")} type={showPassword ? "text" : "password"} placeholder="password" className="input text-white input-bordered bg-[#675E62]" />
                             <span onClick={() => setShowPassword(!showPassword)} className="absolute top-12 right-2 cursor-pointer">
                                 {
                                     showPassword ? <FaEyeSlash className="text-white" /> : <FaEye className="text-white" />
