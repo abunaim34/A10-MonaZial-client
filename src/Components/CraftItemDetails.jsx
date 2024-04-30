@@ -17,39 +17,39 @@ const CraftItemDetails = () => {
                    <h2 className="card-title mb-5 font-bold text-xl md:text-3xl">{craftDetails.item_name}</h2>
                    <div className="flex items-center justify-between mb-5 ">
                        <div>
-                           <span className="md:font-bold font-medium text-black pr-2 ">SubCategory :</span> <span className="font-semibold">{craftDetails.subcategory_Name}</span>
+                           <span className="md:font-bold font-medium pr-2 ">SubCategory :</span> <span className="font-semibold">{craftDetails.subcategory_Name}</span>
                        </div>
                        <div className="flex">
-                           <span className="font-bold  text-black pr-2"><span className="hidden md:block">Rating :</span> </span><span className="font-semibold flex items-center font-sans">{craftDetails.rating}<FaStarHalfAlt /></span>
+                           <span className="font-bold pr-2"><span className="hidden md:block">Rating :</span> </span><span className="font-semibold flex items-center font-sans">{craftDetails.rating}<FaStarHalfAlt /></span>
                        </div>
                    </div>
                    <div className="flex justify-between flex-col md:flex-row">
                        <div className="flex">
-                           <span className="md:font-bold font-medium text-black pr-2">Name : </span><span className="font-medium md:font-semibold ">{user?.displayName}</span>
+                           <span className="md:font-bold font-medium pr-2">Name : </span><span className="font-medium md:font-semibold ">{user?.displayName}</span>
                        </div>
                        <div>
-                           <p className="md:font-bold font-medium text-black pr-2">Email : {user?.email}</p>
+                           <p className="md:font-bold font-medium pr-2">Email : {user?.email}</p>
                        </div>
                    </div>
                    <div className='flex justify-between flex-col md:flex-row border-y-2 py-4'>
                        <div className="flex">
-                           <span className="font-bold text-black pr-2">Processing Time : </span><span className="font-semibold">{craftDetails.processing_time}</span>
+                           <span className="font-bold pr-2">Processing Time : </span><span className="font-semibold">{craftDetails.processing_time}</span>
                            
                        </div>
                        <div className='mt-3 md:mt-0'>
-                           <span className="font-bold text-black  ">Customization:</span><span className="font-semibold">{craftDetails.customization}</span>
+                           <span className="font-bold">Customization:</span><span className="font-semibold">{craftDetails.customization}</span>
                        </div>
                    </div>
                    <div data-aos="fade-right" className="pt-0 border-b-2 pb-3 ">
-                       <span className="font-bold text-black">Description : </span><span >{craftDetails.short_description}</span>
+                       <span className="font-bold">Description : </span><span >{craftDetails.short_description}</span>
                    </div>
                    
                    <div className="flex justify-between mt-6">
                        <div className='flex gap-2'>
-                           <span className="md:font-bold font-medium text-black  ">stockStatus:</span> <span className="font-semibold">{craftDetails.stockStatus}</span>
+                           <span className="md:font-bold font-medium">stockStatus:</span> <span className="font-semibold">{craftDetails.stockStatus}</span>
                        </div>
                        <div>
-                           <p className="md:font-bold font-medium text-black pr-2">Price : {craftDetails.price}</p>
+                           <p className="md:font-bold font-medium pr-2">Price : {craftDetails.price}</p>
                        </div>
                    </div>
                </div>

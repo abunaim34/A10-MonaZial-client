@@ -27,7 +27,7 @@ const AddCraftItem = () => {
         console.log(painting);
 
 
-        fetch('http://localhost:5000/paintings', {
+        fetch('https://monazila-server.vercel.app/paintings', {
             method: "POST",
             headers: {
                 'content-type': "application/json"
@@ -97,9 +97,16 @@ const AddCraftItem = () => {
                         <label className="label">
                             <span className="label-text font-bold">Sub-Category</span>
                         </label>
-                        <label className="input-group">
-                            <input type="text" name="subcategory_Name" placeholder="Sub-category" className="input input-bordered w-full" />
-                        </label>
+                        <select name="subcategory_Name" className="select select-bordered w-full ">
+                            <option disabled selected>Select your Sub-Category</option>
+                            <option>Landscape Painting</option>
+                            <option>Portrait Drawing</option>
+                            <option>Watercolour Painting</option>
+                            <option>Oil Painting</option>
+                            <option>Charcoal Sketching</option>
+                            <option>Cartoon Drawing</option>
+                            
+                        </select>
                     </div>
                     <div className="form-control md:w-1/2 lg:ml-4">
                         <label className="label">
@@ -115,9 +122,11 @@ const AddCraftItem = () => {
                         <label className="label">
                             <span className="label-text font-bold">Customization</span>
                         </label>
-                        <label className="input-group">
-                            <input type="text" name="customization" placeholder="Customization" className="input input-bordered w-full" />
-                        </label>
+                        <select name="customization" className="select select-bordered w-full ">
+                            <option disabled selected>Select your Customization</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
                     </div>
                     <div className="form-control md:w-1/2 lg:ml-4">
                         <label className="label">
@@ -133,9 +142,11 @@ const AddCraftItem = () => {
                         <label className="label">
                             <span className="label-text font-bold">Stock Status</span>
                         </label>
-                        <label className="input-group">
-                            <input type="text" name="stockStatus" placeholder="Stock Status" className="input input-bordered w-full" />
-                        </label>
+                        <select name="stockStatus" className="select select-bordered w-full ">
+                            <option disabled selected>Select your Stock Status</option>
+                            <option>In-stock</option>
+                            <option>None-stock</option>
+                        </select>
                     </div>
                     <div className="form-control md:w-1/2 lg:ml-4">
                         <label className="label">
@@ -152,7 +163,6 @@ const AddCraftItem = () => {
                             <span className="label-text font-bold">Description</span>
                         </label>
                         <label className="input-group">
-                            {/* <input type="text" name="description" placeholder="Description" className="input input-bordered w-full" /> */}
                             <textarea name="short_description" rows="5" className="border-2 w-full"></textarea>
                         </label>
                     </div>

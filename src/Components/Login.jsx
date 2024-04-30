@@ -73,10 +73,7 @@ const Login = () => {
     }
     return (
         <div className="flex flex-col mt-20 lg:flex-row text-center items-center gap-10 justify-between lg:mx-16">
-            {/* <Helmet>
-                <title>Residential House | Login page</title>
-            </Helmet> */}
-            <div className="lg:text-start md:text-center text-black">
+            <div className="lg:text-start md:text-center">
                 <h1 className="mb-5 md:text-4xl text-3xl font-bold">Welcome to the <br /> <span className='bg-gradient-to-r from-[#9b5273] via-red-500 to-blue-400 text-transparent bg-clip-text bg-300% animate-gradient'>MonaZila</span> Login Page..!</h1>
                 <p className=" md:w-[400px] lg:w-full">Welcome to MonaZila, where the eyes are calm and every painting is an unforgettable experience. Join our exclusive community today by SignIn for your personal account. By becoming a member, you will gain access to special offers, personalized recommendations, and seamless booking experience.</p>
             </div>

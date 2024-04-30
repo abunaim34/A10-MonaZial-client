@@ -11,6 +11,7 @@ import PrivateRutes from "./PrivateRutes";
 import CraftItemDetails from "../Components/CraftItemDetails";
 import UpdateArtCraftList from "../Components/UpdateArtCraftList";
 
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -20,17 +21,15 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/paintings'),
             },
             {
                 path: '/craftItems/:id',
                 element: <PrivateRutes><CraftItemDetails /></PrivateRutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/painting/${params.id}`)
+                loader: ({params}) => fetch(`https://monazila-server.vercel.app/painting/${params.id}`)
             },
             {
                 path: '/allArt&craftItems',
                 element: <AllArtCraftItems />,
-                loader: () => fetch('http://localhost:5000/paintings')
             },
             {
                 path: '/addCraftItem',
@@ -43,7 +42,7 @@ const router = createBrowserRouter([
             {
                 path: '/artCraftList/:id',
                 element: <UpdateArtCraftList />,
-                loader: ({params}) => fetch(`http://localhost:5000/painting/${params.id}`)
+                loader: ({params}) => fetch(`https://monazila-server.vercel.app/painting/${params.id}`)
             },
             {
                 path: '/login',

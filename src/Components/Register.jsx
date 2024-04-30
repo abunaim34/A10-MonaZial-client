@@ -58,10 +58,7 @@ const Register = () => {
 
     return (
         <div className=" flex flex-col mt-12 lg:flex-row text-center items-center gap-4 justify-between mx-auto lg:mx-16">
-            {/* <Helmet>
-                <title>Residential House | Register page</title>
-            </Helmet> */}
-            <div className="lg:text-start  md:text-center text-black">
+            <div className="lg:text-start  md:text-center">
                 <h1 className="mb-5 md:text-5xl text-3xl font-bold">Welcome to the <br /> <span className='bg-gradient-to-r from-[#9b5273] via-red-500 to-blue-400 text-transparent bg-clip-text bg-300% animate-gradient'>MonaZila</span> Register <br />Page..!</h1>
                 <p className=" md:w-[400px] mx-auto lg:w-full">Welcome to MonaZila, where the eyes are calm and every painting is an unforgettable experience. Join our exclusive community today by signUp for create your personal account. By create a new member..</p>
             </div>

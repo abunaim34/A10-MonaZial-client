@@ -1,9 +1,23 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Link} from "react-router-dom";
+import { GridLoader } from "react-spinners";
 import { Tooltip } from "react-tooltip";
 
 
 const AllArtCraftItems = () => {
-    const AllItems = useLoaderData()
+    const [AllItems, setAllItems] = useState([])
+    const [loader, setLoader] = useState(false)
+
+    useEffect(() => {
+        setLoader(true)
+        fetch('https://monazila-server.vercel.app/paintings')
+        .then(res => res.json())
+        .then(data => {
+            setAllItems(data) 
+            setLoader(false)
+        })
+    }, [])
 
     return (
         <div className="container p-2 mx-auto rounded-md sm:p-4 dark:text-gray-800 dark:bg-gray-50">
@@ -21,7 +35,7 @@ const AllArtCraftItems = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
+                        { loader ? <GridLoader color="#36d7b7" /> :
                             AllItems.map((item, index) => <tr key={index} className="hover">
                             <th>{index + 1}</th>
                             <td>{item.item_name}</td>

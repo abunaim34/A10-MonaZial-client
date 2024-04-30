@@ -83,10 +83,9 @@ const Navber = () => {
                                 <img title={user?.displayName} alt="User Profile" src={user?.photoURL} />
                             </div>
                         </div>
-                        
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100  rounded-box w-52">
-                            <li><a>{user?.displayName}</a></li>
-                            <li onClick={handleLogout}><Link to="/login">Logout</Link></li>
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#F1EBEE] rounded-box w-52">
+                            <li className="hover:bg-white"><a>{user?.displayName}</a></li>
+                            <li onClick={handleLogout} className="hover:bg-white" ><Link to="/login">Logout</Link></li>
                         </ul>
                     </div> :
                     <><Link to="/register" data-tooltip-id="my-tooltip" data-tooltip-content="Register Now" className="btn font-bold hidden md:block pt-4 text-white bg-[#9b5273]">Register</Link>
