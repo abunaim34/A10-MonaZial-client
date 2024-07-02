@@ -2,8 +2,7 @@
 
 # MonaZila
 
-### [Live link](https://monazila-852ee.web.app)
-### [Server side](https://github.com/md-abu-naim/A10-MonaZila-server)
+### [Live link](https://monazila-852ee.web.app) :  [Server side](https://github.com/md-abu-naim/A10-MonaZila-server)
 
 
 ### Overview :- 
