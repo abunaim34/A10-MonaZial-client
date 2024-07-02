@@ -10,10 +10,9 @@
 This is a real estate website. This website is a full stack website related to Art & Craft. There are different types of Craft and Painting. Here you can add your favorite paintings.
 
 ### Features 
-1. Our website has different categories of real estate products and storage all data at MongoDB.
-2. If you want you can add Craft Item as you want from our Add Craft Item page..
-3. And you can see all the items you have added in the All Art & Craft Items page and from there you can see the complete details of your item by clicking the View Details button.
-4. And every user of our website can see the added items on My Art&Craft List page and can update and delete from there.
+1. If you want you can add Craft Item as you want from our Add Craft Item page..
+2. And you can see all the items you have added in the All Art & Craft Items page and from there you can see the complete details of your item by clicking the View Details button.
+3. And every user of our website can see the added items on My Art&Craft List page and can update and delete from there.
 
 ##### Project Technologies: React.js, Node.js, Express.js, MongoDB, Firebase, JWT, Tailwind CSS, React hook form.
 
